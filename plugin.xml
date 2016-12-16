@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<plugin xmlns="http://www.phonegap.com/ns/plugins/1.0"
+        id="com.adreno.exitIOS"
+        version="0.1.0">
+
+  <name>Exit iOS</name>
+
+  <engines>
+    <engine name="cordova" version=">=4.3.1"/>
+  </engines>
+
+  <asset src="www/ExitIOSApp.js" target="js/ExitIOSApp.js"/>
+
+  <js-module src="www/ExitIOSApp.js" name="ExitIOSApp">
+    <clobbers target="ExitIOSApp" />
+  </js-module>
+
+  <platform name="ios">
+    
+    <config-file target="config.xml" parent="/widget">
+      <feature name="ExitIOSApp">
+        <param name="ios-package" value="ExitIOSApp" />
+      </feature>
+    </config-file>
+
+    <header-file src="src/ios/ExitIOSApp.h" target-dir="ExitIOSApp"/>
+    <source-file src="src/ios/ExitIOSApp.m" target-dir="ExitIOSApp"/>
+  </platform>
+</plugin>
